@@ -4,26 +4,25 @@
  *
  * */
 
-#include<stdio.h>
-
-#define NONBLANK '-'
-
-int main(void)
+#include <stdio.h>
+/* Checking next character if it is space/blank or not! */
+int main() 
 {
-	int c, lastc;
 
-	lastc = NONBLANK;
+int c;
 
-	while((c = getchar()) != EOF)
+while ((c=getchar())!=EOF)
 	{
-		if(c == ' ')
+
+	if (c== ' ')
 		{
-			if(lastc != ' ')
-				putchar(c);
+		while ((c=getchar())==' ') /* This loop will advance the pointer in text stream as long as the next character is space */
+			{;} /* or instead of these two lines "while ((c=getchar())==' ');" */
+		printf(" ");
 		}
-		else
-			putchar(c);
-		lastc=c;
+putchar (c);
 	}
-	return 0;
+
+
 }
+
